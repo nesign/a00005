@@ -7,11 +7,17 @@ document.addEventListener('invite', (event) => {
   if (invite) {
     // Loaded invite { addrText: "3366 Demo Street, Demo City, CA - 94583", addrUrl: "https://www.google.com/search?q=3366%20Demo%20Street,%20Demo%20City,%20CA%20-%2094583", bgPhoto: {url: "https://i.imgur.com/bCGCTrB.jpg"}, hostName: "Mr. & Mrs. Demo", longMsg: "It's **Demo's** _birthday_,↵↵and we're all very _excited_.↵↵For this special _funday_,↵↵you are cheerfully _invited_.", mainPhoto: {url: "https://i.imgur.com/LiQ7lSI.jpg"}, nesign: "a00001", photos: (3) [{…}, {…}, {…}], shortMsg: "You are invited!", timeFrom: moment, timeFromString: "Friday, December 25, 2020 7:00 PM", timeTo: moment, timeToString: "Friday, December 25, 2020 11:00 PM", title: "Demo is turning 3", tz: "America/Los_Angeles"}
     if (invite.mainPhoto && invite.mainPhoto.url) {
-      masthead = document.querySelector('div.main-photo');
+      let masthead = document.querySelector('div.main-photo');
       if (masthead) {
         masthead.style.backgroundImage = `url('${invite.mainPhoto.url}')`;
+      } else {
+        console.log('Err: setting mainPhoto: div.main-photo missing?');
       }
+    } else {
+      console.log('Err: setting mainPhoto: mainPhoto missing?');
     }
+  } else {
+    console.log('Err: setting mainPhoto: invite empty?');
   }
 }, false);
 
