@@ -69,4 +69,22 @@
     </div>
   </section>
   {{/if}}
+  <section class="pt-5 pb-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Please RSVP</h2>
+          <hr class="divider my-4">
+        </div>
+      </div>
+      {{#if invite.hostName}}
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center mb-5 mb-lg-0">
+          <i class="fas fa-heart fa-3x mb-3 text-muted"></i>
+          <div>{{invite.hostName}}</div>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </section>
 </div>
