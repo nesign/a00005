@@ -1,7 +1,9 @@
 <!-- Custom template goes here -->
 <div class="bg-semi-light">
-  <div class="main-photo">
+  {{#if mainPhoto}}
+  <div class="main-photo" style="background-image: url('{{mainPhoto.url}}')">
   </div>
+  {{/if}}
 
   <section class="py-5 bg-white">
     <div class="container py-5">
