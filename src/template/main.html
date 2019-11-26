@@ -55,12 +55,16 @@
         {{#each sliderPhotos}}
         <div class="col-lg-4 col-sm-6 px-2">
           <div class="slide-wrap rounded shadow-lg">
+            {{#if title}}
             <div class="slide-title p-2 text-center text-white bg-semi-dark w-100">
               <h4>{{title}}</h4>
             </div>
+            {{/if}}
+            {{#if description}}
             <div class="slide-description small text-muted p-2 text-center bg-semi-dark w-100">
               {{description}}
             </div>
+            {{/if}}
             <div class="slide-img">
               <img class="img-fluid" src="{{url}}" alt="{{title}}">
             </div>
