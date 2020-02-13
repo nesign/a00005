@@ -1,5 +1,5 @@
 <head></head><!-- Custom template goes here -->
-<div class="bg-semi-light">
+<div class="bg-semi-light" id="inviteDesign">
   {{#if mainPhoto}}
   {{#if isVideoInvite}}
   <div class="p-md-5 d-flex justify-content-center align-items-center">
@@ -7,7 +7,10 @@
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   {{else}}
-  <div class="main-photo" style="background-image: url('{{mainPhoto.url}}')">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-8">
+      <img class="img-fluid shadow" src="{{mainPhoto.url}}" alt="{{mainPhoto.title}}" id="mainPhoto">
+    </div>
   </div>
   {{/if}}
   {{/if}}
@@ -17,10 +20,10 @@
       <div class="block py-5">
         <div class="text-center jumbotron  bg-white" style="padding-top: 49px;">
           {{#if guest}}
-          <p class="small text-muted">{{guest.name}}</p>
+          <p class="small text-muted" id="guestName">{{guest.name}}</p>
           {{/if}}
-          <h1 class="f-abril display-1">{{invite.title}}</h1>
-          <p class="text-muted">{{invite.shortMsg}}</p>
+          <h1 class="f-abril display-1" id="title">{{invite.title}}</h1>
+          <p class="text-muted" id="shortMsg">{{invite.shortMsg}}</p>
         </div>
       </div>
     </div>
@@ -28,7 +31,7 @@
 
   {{#if longMsg}}
   <section class="long-msg py-5 shadow-sm">
-    <div class="long-msg my-5 text-center f-dancing py-5 display-4">
+    <div class="long-msg my-5 text-center f-dancing py-5 display-4" id="longMsg">
       {{{longMsg}}}
     </div>
   </section>
@@ -37,18 +40,18 @@
   <section class="details pt-5 pb-2">
     <div class="row my-5">
       <div class="col-12 col-md-6">
-        <div class="card text-white bg-semi-dark text-light">
+        <div class="card text-white bg-semi-dark text-light" id="addrTextCard">
           <div class="card-body">
-            <h5 class="card-title">Venue</h5>
-            <p class="card-text">{{invite.addrText}}</p>
+            <h5 class="card-title" id="addrTextTitle">Venue</h5>
+            <p class="card-text" id="addrText">{{invite.addrText}}</p>
           </div>
         </div>
       </div>
       <div class="col-12 col-md-6 mt-2 mt-md-0">
-        <div class="card text-white bg-semi-dark text-light">
+        <div class="card text-white bg-semi-dark text-light" id="timeCard">
           <div class="card-body">
-            <h5 class="card-title">Time</h5>
-            <p class="card-text">{{invite.timeFromString}} - {{endsat invite}}</p>
+            <h5 class="card-title" id="timeTitle">Time</h5>
+            <p class="card-text" id="time">{{invite.timeFromString}} - {{endsat invite}}</p>
           </div>
         </div>
       </div>
@@ -100,4 +103,5 @@
       {{/if}}
     </div>
   </section>
+  <div class="bg" id="inviteBackground"></div>
 </div>
